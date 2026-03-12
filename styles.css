@@ -93,6 +93,12 @@ body {
   border-color: var(--accent);
 }
 
+.nav-tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .hero {
   display: grid;
   gap: 26px;
@@ -175,6 +181,18 @@ h1 {
   border-color: rgba(15, 122, 114, 0.35);
 }
 
+.btn-small {
+  padding: 8px 14px;
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.edit-state {
+  margin: 12px 0 0;
+  color: #80796c;
+  font-size: 0.9rem;
+}
+
 .profile-card {
   padding: 22px;
 }
@@ -243,28 +261,6 @@ main {
   margin-bottom: 16px;
 }
 
-.timeline {
-  display: grid;
-  gap: 14px;
-}
-
-.timeline-item {
-  border-left: 4px solid rgba(15, 122, 114, 0.3);
-  padding: 8px 14px;
-  background: #fff;
-  border-radius: 10px;
-}
-
-.timeline-item p {
-  margin: 6px 0;
-  color: var(--muted);
-}
-
-.timeline-item span {
-  color: #7c7469;
-  font-size: 0.93rem;
-}
-
 .chips {
   display: flex;
   flex-wrap: wrap;
@@ -272,12 +268,25 @@ main {
   margin-bottom: 16px;
 }
 
-.chips span {
+.chips .chip-item {
   padding: 6px 12px;
   border-radius: 999px;
   border: 1px solid #d5ccbe;
   background: #fff;
   font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chip-remove {
+  border: 0;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(202, 111, 52, 0.15);
+  color: #8f4b20;
+  cursor: pointer;
+  font-size: 0.75rem;
 }
 
 .skill-list,
@@ -304,6 +313,20 @@ main {
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 18px;
+  position: relative;
+}
+
+.project-remove {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: 0;
+  border-radius: 10px;
+  background: rgba(202, 111, 52, 0.16);
+  color: #8f4b20;
+  padding: 4px 9px;
+  cursor: pointer;
+  font-size: 0.75rem;
 }
 
 .project-head {
@@ -311,6 +334,7 @@ main {
   justify-content: space-between;
   gap: 12px;
   align-items: flex-start;
+  padding-right: 56px;
 }
 
 .project-head h3 {
@@ -336,6 +360,65 @@ main {
   color: var(--accent);
   text-decoration: none;
   font-weight: 700;
+}
+
+.editor-box {
+  margin: 8px 0 16px;
+  padding: 14px;
+  border: 1px dashed #cfc2b1;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.editor-title {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.editor-tip {
+  margin: 8px 0 0;
+  color: #7f7669;
+  font-size: 0.83rem;
+}
+
+.editor-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.editor-row + .editor-row {
+  margin-top: 10px;
+}
+
+.editor-input,
+.editor-textarea {
+  width: 100%;
+  border: 1px solid #d8ccbc;
+  border-radius: 10px;
+  padding: 9px 11px;
+  font: inherit;
+  background: #fffdfa;
+}
+
+.editor-input {
+  flex: 1 1 260px;
+}
+
+.editor-textarea {
+  min-height: 92px;
+  resize: vertical;
+}
+
+.empty-tip {
+  margin: 0;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px dashed #d7ccbd;
+  background: #fff;
+  color: #7f7669;
+  font-size: 0.9rem;
 }
 
 .is-hidden {
@@ -382,6 +465,12 @@ main {
   }
 
   .nav-links {
+    flex-wrap: wrap;
+  }
+
+  .nav-tools {
+    width: 100%;
+    justify-content: flex-start;
     flex-wrap: wrap;
   }
 
