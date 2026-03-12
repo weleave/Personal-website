@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="weleave 的个人网站，展示技能、项目与联系方式。"
+    />
+    <title>weleave | 个人网站</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=ZCOOL+QingKe+HuangYou&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-left"></div>
+    <div class="bg-orb orb-right"></div>
+
+    <header class="site-header">
+      <nav class="nav container">
+        <a class="brand" href="#top">weleave</a>
+        <div class="nav-links">
+          <a href="#about">简介</a>
+          <a href="#skills">技能</a>
+          <a href="#projects">项目</a>
+          <a href="#contact">联系</a>
+        </div>
+        <div class="nav-tools">
+          <button type="button" class="btn ghost btn-small" id="toggle-edit-btn">
+            开启编辑
+          </button>
+          <button type="button" class="btn ghost btn-small is-hidden" id="reset-content-btn">
+            恢复默认
+          </button>
+        </div>
+      </nav>
+
+      <section class="hero container" id="top">
+        <div class="hero-main" data-reveal>
+          <p class="tag">C++ 开发者个人网站</p>
+          <h1>weleave</h1>
+          <p class="lead">
+            专注 C++ 工程实践与系统实现，持续打磨并发编程、资源管理与工程化能力。
+          </p>
+          <div class="hero-actions">
+            <a
+              class="btn"
+              href="https://github.com/weleave"
+              target="_blank"
+              rel="noopener"
+            >
+              访问 GitHub
+            </a>
+            <a
+              class="btn ghost"
+              id="resume-link"
+              href="./resume.jpg"
+              target="_blank"
+              rel="noopener"
+            >
+              查看简历图
+            </a>
+          </div>
+          <p class="edit-state" id="edit-state">当前为浏览模式</p>
+        </div>
+
+        <aside class="profile-card" data-reveal>
+          <div class="avatar" id="avatar-box">
+            <img id="avatar-image" src="./avatar.jpg" alt="头像" />
+            <span id="avatar-fallback">W</span>
+          </div>
+          <ul>
+            <li>可交流方向：C++、并发、工程化</li>
+            <li>城市：可按需填写</li>
+            <li><a href="mailto:hello@mail.com">hello@mail.com</a></li>
+            <li>
+              <a href="https://github.com/weleave" target="_blank" rel="noopener">
+                github.com/weleave
+              </a>
+            </li>
+          </ul>
+        </aside>
+      </section>
+    </header>
+
+    <main class="container">
+      <section class="panel" id="about" data-reveal>
+        <h2>个人说明</h2>
+        <ul class="skill-list">
+          <li>这是一个公开展示版主页，用于记录技术方向与项目实践。</li>
+          <li>页面支持一键编辑技能与项目条目，并自动保存在浏览器本地。</li>
+          <li>如果需要恢复初始内容，可以在编辑模式下点击“恢复默认”。</li>
+        </ul>
+      </section>
+
+      <section class="panel" id="skills" data-reveal>
+        <h2>专业技能</h2>
+        <div class="chips" id="skills-chips">
+          <span>C++20</span>
+          <span>STL / RAII</span>
+          <span>模板与泛型</span>
+          <span>std::thread / async</span>
+          <span>CMake</span>
+          <span>Linux / WSL</span>
+          <span>Git / GitHub</span>
+          <span>JSON / YAML</span>
+          <span>Redis</span>
+          <span>MySQL</span>
+        </div>
+        <div class="editor-box is-hidden" id="skill-editor">
+          <p class="editor-title">技能编辑</p>
+          <div class="editor-row">
+            <input
+              type="text"
+              id="skill-input"
+              class="editor-input"
+              placeholder="输入技能，例如：Boost.Asio"
+              maxlength="40"
+            />
+            <button type="button" class="btn btn-small" id="add-skill-btn">新增技能</button>
+          </div>
+          <p class="editor-tip">删除技能：点击技能右侧“删除”按钮。</p>
+        </div>
+        <ul class="skill-list">
+          <li>掌握现代 C++ 常见语法与对象生命周期管理，具备扎实编码能力。</li>
+          <li>熟悉 Linux/WSL 开发流程与 CMake 构建调试，能够独立推进项目开发。</li>
+          <li>具备并发编程基础，可实现异步任务调度与常见同步控制方案。</li>
+          <li>可处理配置解析、缓存场景与基础数据库操作，支持工程化落地。</li>
+          <li>能够通过日志、断点与编译信息快速排查并修复问题。</li>
+        </ul>
+      </section>
+
+      <section class="panel" id="projects" data-reveal>
+        <h2>项目经历</h2>
+        <div class="project-grid" id="projects-grid">
+          <article class="project-card">
+            <div class="project-head">
+              <h3>轻量 ECS 实验项目</h3>
+              <span>2025.12 - 2026.02</span>
+            </div>
+            <p class="project-meta">个人项目</p>
+            <ul>
+              <li>基于 C++20 实现 ECS 原型，支持实体句柄管理与组件存储。</li>
+              <li>采用 generation 机制与 swap-remove 策略提升安全性和性能。</li>
+              <li>通过压力测试与 CMake 独立构建验证整体可运行性。</li>
+            </ul>
+            <a
+              class="text-link"
+              href="https://github.com/weleave/mini-ecs-cpp"
+              target="_blank"
+              rel="noopener"
+            >
+              查看项目仓库
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-head">
+              <h3>资源热更新工具示例</h3>
+              <span>2026.02 - 2026.03</span>
+            </div>
+            <p class="project-meta">个人项目</p>
+            <ul>
+              <li>实现目录扫描、配置重载与文件变更检测流程。</li>
+              <li>建立资源元信息映射与增量更新逻辑，提升调试效率。</li>
+              <li>覆盖首次加载与重复加载场景，支持自动化验证。</li>
+            </ul>
+            <a
+              class="text-link"
+              href="https://github.com/weleave/HotReloadKit"
+              target="_blank"
+              rel="noopener"
+            >
+              查看项目仓库
+            </a>
+          </article>
+        </div>
+        <div class="editor-box is-hidden" id="project-editor">
+          <p class="editor-title">项目编辑</p>
+          <div class="editor-row">
+            <input
+              type="text"
+              id="project-title-input"
+              class="editor-input"
+              placeholder="项目名称（必填）"
+              maxlength="60"
+            />
+            <input
+              type="text"
+              id="project-period-input"
+              class="editor-input"
+              placeholder="项目时间，例如：2026.03 - 2026.06"
+              maxlength="40"
+            />
+          </div>
+          <div class="editor-row">
+            <input
+              type="text"
+              id="project-role-input"
+              class="editor-input"
+              placeholder="项目身份，例如：个人项目"
+              maxlength="40"
+            />
+            <input
+              type="text"
+              id="project-link-input"
+              class="editor-input"
+              placeholder="项目链接，例如：https://github.com/xxx/yyy"
+              maxlength="200"
+            />
+          </div>
+          <textarea
+            id="project-bullets-input"
+            class="editor-textarea"
+            placeholder="项目亮点（每行一条，至少一条）"
+          ></textarea>
+          <div class="editor-row">
+            <button type="button" class="btn btn-small" id="add-project-btn">新增项目</button>
+          </div>
+          <p class="editor-tip">删除项目：点击项目卡片右上角“删除”按钮。</p>
+        </div>
+      </section>
+
+      <section class="panel contact" id="contact" data-reveal>
+        <h2>联系我</h2>
+        <p>当前页面为公开模板版，联系方式可替换为你愿意公开展示的渠道。</p>
+        <div class="hero-actions">
+          <a class="btn" href="mailto:hello@example.com">发送邮件</a>
+          <a class="btn ghost" href="https://github.com/weleave" target="_blank" rel="noopener">
+            GitHub 主页
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer container">
+      <p>&copy; <span id="year"></span> weleave · 基于 GitHub Pages 搭建</p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
