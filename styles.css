@@ -577,6 +577,136 @@ h4 {
   font-size: 0.86rem;
 }
 
+.playground-grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.lab-panel {
+  padding: clamp(18px, 3vw, 28px);
+}
+
+.lab-headline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.lab-desc {
+  margin: 12px 0 0;
+  color: #4f5870;
+  font-size: 0.94rem;
+}
+
+.note-form {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.notes-list {
+  margin-top: 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.note-card {
+  border-radius: 14px;
+  border: 1px solid rgba(54, 69, 90, 0.12);
+  background:
+    linear-gradient(135deg, rgba(15, 154, 148, 0.08), rgba(255, 127, 80, 0.08)),
+    #fff;
+  padding: 12px 14px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  box-shadow: var(--shadow-card);
+}
+
+.note-card p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: #3f475c;
+}
+
+.focus-badge {
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 0.82rem;
+  background: rgba(255, 127, 80, 0.14);
+  color: #8a4d33;
+  white-space: nowrap;
+}
+
+.timer-display {
+  margin-top: 18px;
+  font-family: "ZCOOL QingKe HuangYou", cursive;
+  font-size: clamp(3rem, 10vw, 5rem);
+  letter-spacing: 2px;
+  color: #102f3a;
+}
+
+.preset-row {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.preset-pill {
+  border: 1px solid rgba(15, 154, 148, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--ink-soft);
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.24s, color 0.24s, transform 0.24s;
+}
+
+.preset-pill:hover {
+  transform: translateY(-2px);
+}
+
+.preset-pill.active {
+  background: rgba(15, 154, 148, 0.14);
+  color: var(--brand-strong);
+}
+
+.quote-card {
+  margin-top: 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(54, 69, 90, 0.12);
+  background:
+    radial-gradient(circle at 12% 20%, rgba(255, 127, 80, 0.2), transparent 26%),
+    radial-gradient(circle at 90% 10%, rgba(15, 154, 148, 0.18), transparent 30%),
+    #fff;
+  padding: clamp(18px, 4vw, 28px);
+  box-shadow: var(--shadow-card);
+}
+
+.idea-text {
+  margin: 0;
+  font-size: clamp(1.15rem, 3vw, 1.6rem);
+  line-height: 1.55;
+  color: #243042;
+  font-weight: 700;
+}
+
+.idea-subtitle {
+  margin: 14px 0 0;
+  font-size: 0.9rem;
+  color: var(--brand-strong);
+  font-weight: 700;
+}
+
 .contact-grid {
   margin-top: 14px;
   display: grid;
@@ -647,6 +777,7 @@ h4 {
   }
 
   .project-grid,
+  .playground-grid,
   .contact-grid {
     grid-template-columns: 1fr;
   }
@@ -674,6 +805,11 @@ h4 {
 
   .section {
     padding: 16px;
+  }
+
+  .lab-headline {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .cursor-orb {

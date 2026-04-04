@@ -3,8 +3,10 @@
   const qsa = (selector, root = document) => Array.from(root.querySelectorAll(selector));
 
   const STORAGE_KEYS = {
-    skills: "weleave.skills.v2",
-    projects: "weleave.projects.v2",
+    skills: "weleave.skills.v3",
+    projects: "weleave.projects.v5",
+    memos: "weleave.playground.memos.v1",
+    focusSessions: "weleave.playground.focus.sessions.v1",
   };
 
   function initYear() {
@@ -519,6 +521,274 @@
     setEditMode(false);
   }
 
+  function initPlaygroundTools() {
+    const root = qs("#playground-root");
+    if (!root) {
+      return;
+    }
+
+    const memoInput = qs("#memo-input");
+    const memoAddBtn = qs("#memo-add-btn");
+    const memoClearBtn = qs("#memo-clear-btn");
+    const memoList = qs("#memo-list");
+    const memoStatus = qs("#memo-status");
+
+    const timerDisplay = qs("#focus-timer-display");
+    const focusSessionCount = qs("#focus-session-count");
+    const focusStartBtn = qs("#focus-start-btn");
+    const focusPauseBtn = qs("#focus-pause-btn");
+    const focusResetBtn = qs("#focus-reset-btn");
+    const focusStatus = qs("#focus-status");
+    const presetButtons = qsa("[data-focus-minutes]");
+
+    const ideaRefreshBtn = qs("#idea-refresh-btn");
+    const ideaTextNode = qs("#idea-card-text");
+    const ideaTagNode = qs("#idea-card-tag");
+
+    if (
+      !memoInput ||
+      !memoAddBtn ||
+      !memoClearBtn ||
+      !memoList ||
+      !memoStatus ||
+      !timerDisplay ||
+      !focusSessionCount ||
+      !focusStartBtn ||
+      !focusPauseBtn ||
+      !focusResetBtn ||
+      !focusStatus ||
+      !ideaRefreshBtn ||
+      !ideaTextNode ||
+      !ideaTagNode
+    ) {
+      return;
+    }
+
+    const memoDefaults = [
+      "做一个只记录一句话的小页面，不追求复杂功能，先把交互做顺。",
+      "给网站补一个纯娱乐模块，例如随机配色卡、冷知识卡片或者小型打卡器。",
+      "把某个已经写过的 C++ 模块画成结构图，再反过来检查接口边界是否清晰。",
+    ];
+
+    const ideaDeck = [
+      {
+        text: "做一个“今天吃什么”随机卡片，点击按钮随机抽一个餐食，并记录最近 5 次选择。",
+        tag: "#生活小工具",
+      },
+      {
+        text: "写一个极简像素画板，只支持 8x8 网格和 6 种颜色，但要能一键清空和导出截图。",
+        tag: "#交互实验",
+      },
+      {
+        text: "做一个纯前端倒数日组件，输入一个日期后自动算还剩几天，并根据接近程度改变背景色。",
+        tag: "#时间组件",
+      },
+      {
+        text: "做一个“随机一句提醒”卡片，不讲大道理，只放短句，比如先提交一个可运行版本，再慢慢重构。",
+        tag: "#轻量提示器",
+      },
+      {
+        text: "给个人站点做一个隐藏彩蛋：连续点击品牌名 5 次后，随机切换一套主题色并显示一条提示。",
+        tag: "#网页彩蛋",
+      },
+      {
+        text: "做一个极简本地书签板，把临时想看的技术文章链接先存下来，支持一键复制和删除。",
+        tag: "#本地收藏",
+      },
+    ];
+
+    const noteState = {
+      memos: memoDefaults,
+    };
+
+    const cachedMemos = safeJsonParse(localStorage.getItem(STORAGE_KEYS.memos) || "");
+    if (Array.isArray(cachedMemos) && cachedMemos.length > 0) {
+      noteState.memos = cachedMemos.map((item) => String(item).trim()).filter(Boolean).slice(0, 60);
+    }
+
+    function saveMemos() {
+      localStorage.setItem(STORAGE_KEYS.memos, JSON.stringify(noteState.memos));
+    }
+
+    function setMemoStatus(text) {
+      memoStatus.textContent = text;
+    }
+
+    function renderMemos() {
+      memoList.innerHTML = "";
+      if (noteState.memos.length === 0) {
+        const empty = document.createElement("p");
+        empty.className = "empty-tip";
+        empty.textContent = "现在没有便签，可以先写一条临时想法。";
+        memoList.appendChild(empty);
+        return;
+      }
+
+      noteState.memos.forEach((memo, index) => {
+        const card = document.createElement("article");
+        card.className = "note-card";
+
+        const text = document.createElement("p");
+        text.textContent = memo;
+
+        const removeBtn = document.createElement("button");
+        removeBtn.type = "button";
+        removeBtn.className = "remove-btn";
+        removeBtn.textContent = "删";
+        removeBtn.dataset.removeMemo = String(index);
+
+        card.append(text, removeBtn);
+        memoList.appendChild(card);
+      });
+    }
+
+    function addMemo() {
+      const value = memoInput.value.trim();
+      if (!value) {
+        setMemoStatus("便签内容不能为空");
+        return;
+      }
+
+      noteState.memos.unshift(value);
+      noteState.memos = noteState.memos.slice(0, 60);
+      memoInput.value = "";
+      renderMemos();
+      saveMemos();
+      setMemoStatus("已新增一条便签");
+    }
+
+    function removeMemo(index) {
+      if (index < 0 || index >= noteState.memos.length) {
+        return;
+      }
+      noteState.memos.splice(index, 1);
+      renderMemos();
+      saveMemos();
+      setMemoStatus("已删除一条便签");
+    }
+
+    memoAddBtn.addEventListener("click", addMemo);
+    memoInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        addMemo();
+      }
+    });
+
+    memoList.addEventListener("click", (event) => {
+      const removeBtn = event.target.closest("[data-remove-memo]");
+      if (!removeBtn) {
+        return;
+      }
+      removeMemo(Number(removeBtn.dataset.removeMemo));
+    });
+
+    memoClearBtn.addEventListener("click", () => {
+      noteState.memos = [];
+      saveMemos();
+      renderMemos();
+      setMemoStatus("已清空便签墙");
+    });
+
+    let focusDurationSec = 25 * 60;
+    let focusRemainSec = focusDurationSec;
+    let timerId = null;
+    let sessions = Number(localStorage.getItem(STORAGE_KEYS.focusSessions) || "0");
+    if (!Number.isFinite(sessions) || sessions < 0) {
+      sessions = 0;
+    }
+
+    function formatTimer(totalSec) {
+      const safeSec = Math.max(0, Math.floor(totalSec));
+      const minutes = String(Math.floor(safeSec / 60)).padStart(2, "0");
+      const seconds = String(safeSec % 60).padStart(2, "0");
+      return `${minutes}:${seconds}`;
+    }
+
+    function saveSessions() {
+      localStorage.setItem(STORAGE_KEYS.focusSessions, String(sessions));
+    }
+
+    function renderTimer() {
+      timerDisplay.textContent = formatTimer(focusRemainSec);
+      focusSessionCount.textContent = String(sessions);
+    }
+
+    function stopTimer() {
+      if (timerId !== null) {
+        window.clearInterval(timerId);
+        timerId = null;
+      }
+    }
+
+    function setFocusStatus(text) {
+      focusStatus.textContent = text;
+    }
+
+    function setFocusDuration(minutes) {
+      stopTimer();
+      focusDurationSec = minutes * 60;
+      focusRemainSec = focusDurationSec;
+      presetButtons.forEach((btn) => {
+        btn.classList.toggle("active", Number(btn.dataset.focusMinutes) === minutes);
+      });
+      renderTimer();
+      setFocusStatus(`已切换到 ${minutes} 分钟专注模式`);
+    }
+
+    presetButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        setFocusDuration(Number(button.dataset.focusMinutes));
+      });
+    });
+
+    focusStartBtn.addEventListener("click", () => {
+      if (timerId !== null) {
+        return;
+      }
+
+      setFocusStatus("专注计时进行中");
+      timerId = window.setInterval(() => {
+        focusRemainSec -= 1;
+        renderTimer();
+
+        if (focusRemainSec <= 0) {
+          stopTimer();
+          sessions += 1;
+          saveSessions();
+          focusRemainSec = focusDurationSec;
+          renderTimer();
+          setFocusStatus(`本轮完成，累计 ${sessions} 轮专注`);
+        }
+      }, 1000);
+    });
+
+    focusPauseBtn.addEventListener("click", () => {
+      stopTimer();
+      setFocusStatus("已暂停计时");
+    });
+
+    focusResetBtn.addEventListener("click", () => {
+      stopTimer();
+      focusRemainSec = focusDurationSec;
+      renderTimer();
+      setFocusStatus("已重置当前计时");
+    });
+
+    function refreshIdeaCard() {
+      const nextIndex = Math.floor(Math.random() * ideaDeck.length);
+      const idea = ideaDeck[nextIndex];
+      ideaTextNode.textContent = idea.text;
+      ideaTagNode.textContent = idea.tag;
+    }
+
+    ideaRefreshBtn.addEventListener("click", refreshIdeaCard);
+
+    renderMemos();
+    renderTimer();
+    refreshIdeaCard();
+  }
+
   initYear();
   initReveal();
   initNavActive();
@@ -527,4 +797,5 @@
   initOptionalAssets();
   initSkillsEditor();
   initProjectsEditor();
+  initPlaygroundTools();
 })();

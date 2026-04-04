@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="weleave 的灵感游乐场，提供本地便签、随机点子卡和专注计时器。"
+    />
+    <title>weleave | 灵感游乐场</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=ZCOOL+QingKe+HuangYou&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="cursor-orb"></div>
+    <div class="page-wipe" id="page-wipe"></div>
+
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="./index.html" data-transition>weleave</a>
+        <nav class="nav-links">
+          <a class="nav-link" data-page="index.html" href="./index.html" data-transition>主页</a>
+          <a class="nav-link" data-page="skills.html" href="./skills.html" data-transition>技能站</a>
+          <a class="nav-link" data-page="projects.html" href="./projects.html" data-transition>项目库</a>
+          <a class="nav-link" data-page="playground.html" href="./playground.html" data-transition>游乐场</a>
+          <a class="nav-link" data-page="contact.html" href="./contact.html" data-transition>联系</a>
+        </nav>
+        <a class="btn small ghost" href="./projects.html" data-transition>返回项目页</a>
+      </header>
+
+      <main>
+        <section class="section glass" data-reveal>
+          <p class="eyebrow">独立功能页 · 便签 / 随机灵感 / 专注计时</p>
+          <h2>灵感游乐场</h2>
+          <p>
+            这个页面不强行和简历内容绑定，主要是给网站加一点可交互的小工具。
+            便签内容和专注次数会保存在本地浏览器里，适合临时记点子或做短时间专注计时。
+          </p>
+        </section>
+
+        <section class="playground-grid" id="playground-root">
+          <article class="lab-panel glass" data-reveal>
+            <div class="lab-headline">
+              <div>
+                <p class="eyebrow">Memo Board</p>
+                <h2>便签墙</h2>
+              </div>
+              <button type="button" class="btn small ghost" id="memo-clear-btn">清空便签</button>
+            </div>
+
+            <p class="lab-desc">
+              可以把临时想法、待补充的项目点子、或者和学习无关的小计划都先扔到这里。
+            </p>
+
+            <div class="note-form">
+              <input
+                type="text"
+                class="editor-input"
+                id="memo-input"
+                placeholder="写一条便签，例如：周末试试给网站加一个音乐可视化页面"
+                maxlength="80"
+              />
+              <button type="button" class="btn small alt" id="memo-add-btn">贴上去</button>
+            </div>
+
+            <div class="notes-list" id="memo-list"></div>
+            <div class="status-text" id="memo-status">便签会自动保存到本地浏览器</div>
+          </article>
+
+          <article class="lab-panel glass" data-reveal>
+            <div class="lab-headline">
+              <div>
+                <p class="eyebrow">Focus Timer</p>
+                <h2>专注计时器</h2>
+              </div>
+              <div class="focus-badge">
+                已完成 <strong id="focus-session-count">0</strong> 轮
+              </div>
+            </div>
+
+            <div class="timer-display" id="focus-timer-display">25:00</div>
+            <p class="lab-desc">
+              适合做一个轻量番茄钟：选一个时长，开始计时，结束后自动累计完成轮数。
+            </p>
+
+            <div class="preset-row">
+              <button type="button" class="preset-pill" data-focus-minutes="15">15 分钟</button>
+              <button type="button" class="preset-pill active" data-focus-minutes="25">25 分钟</button>
+              <button type="button" class="preset-pill" data-focus-minutes="45">45 分钟</button>
+            </div>
+
+            <div class="hero-actions">
+              <button type="button" class="btn small" id="focus-start-btn">开始专注</button>
+              <button type="button" class="btn small ghost" id="focus-pause-btn">暂停</button>
+              <button type="button" class="btn small ghost" id="focus-reset-btn">重置</button>
+            </div>
+
+            <div class="status-text" id="focus-status">当前未开始计时</div>
+          </article>
+        </section>
+
+        <section class="section glass" data-reveal>
+          <div class="lab-headline">
+            <div>
+              <p class="eyebrow">Idea Shuffle</p>
+              <h2>随机灵感卡</h2>
+            </div>
+            <button type="button" class="btn small" id="idea-refresh-btn">换一个点子</button>
+          </div>
+
+          <article class="quote-card">
+            <p class="idea-text" id="idea-card-text">
+              试着给一个普通页面加一个“无用但有意思”的互动，比如鼠标轨迹、随机配色、或者一块会动的便签墙。
+            </p>
+            <p class="idea-subtitle" id="idea-card-tag">#网页小实验</p>
+          </article>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>&copy; <span id="year"></span> weleave · 灵感游乐场</p>
+      </footer>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

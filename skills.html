@@ -3,8 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="weleave 的技能页，支持可视化编辑技能内容。" />
-    <title>weleave | 技能站</title>
+    <meta
+      name="description"
+      content="weleave 的技能页，整理 C++20、并发编程、ECS 数据结构、Linux 工具链和 AI 工程模块实践。"
+    />
+    <title>weleave | 技能地图</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,6 +27,7 @@
           <a class="nav-link" data-page="index.html" href="./index.html" data-transition>主页</a>
           <a class="nav-link" data-page="skills.html" href="./skills.html" data-transition>技能站</a>
           <a class="nav-link" data-page="projects.html" href="./projects.html" data-transition>项目库</a>
+          <a class="nav-link" data-page="playground.html" href="./playground.html" data-transition>游乐场</a>
           <a class="nav-link" data-page="contact.html" href="./contact.html" data-transition>联系</a>
         </nav>
         <a class="btn small ghost" href="./projects.html" data-transition>查看项目</a>
@@ -31,10 +35,11 @@
 
       <main>
         <section class="section glass" data-reveal>
-          <p class="eyebrow">技能页面</p>
+          <p class="eyebrow">技能页面 · 当前主要技术栈</p>
           <h2>技能地图</h2>
           <p>
-            这一页用于展示和维护我的技术栈。你可以打开编辑模式，随时新增或删除技能标签。
+            这一页用来整理我目前主要在用的技术栈，偏 C++ 工程实现、并发、数据结构、配置解析和 AI 辅助工具模块。
+            我保留了编辑模式，方便后续直接在浏览器里补充新技能标签。
           </p>
         </section>
 
@@ -43,14 +48,20 @@
           <div class="chip-cloud" id="skills-list">
             <span class="chip"><span class="chip-label">C++20</span></span>
             <span class="chip"><span class="chip-label">STL / RAII</span></span>
-            <span class="chip"><span class="chip-label">模板元编程</span></span>
+            <span class="chip"><span class="chip-label">模板泛型组件容器</span></span>
             <span class="chip"><span class="chip-label">并发编程</span></span>
             <span class="chip"><span class="chip-label">CMake</span></span>
             <span class="chip"><span class="chip-label">Linux / WSL</span></span>
             <span class="chip"><span class="chip-label">Git / GitHub</span></span>
             <span class="chip"><span class="chip-label">JSON / YAML</span></span>
-            <span class="chip"><span class="chip-label">MySQL</span></span>
-            <span class="chip"><span class="chip-label">Redis</span></span>
+            <span class="chip"><span class="chip-label">Sparse Set / ECS</span></span>
+            <span class="chip"><span class="chip-label">Command Buffer</span></span>
+            <span class="chip"><span class="chip-label">Thread Pool</span></span>
+            <span class="chip"><span class="chip-label">std::shared_mutex</span></span>
+            <span class="chip"><span class="chip-label">inotify 文件事件</span></span>
+            <span class="chip"><span class="chip-label">nlohmann/json</span></span>
+            <span class="chip"><span class="chip-label">yaml-cpp</span></span>
+            <span class="chip"><span class="chip-label">DeepSeek API 接入</span></span>
           </div>
 
           <div class="editor-toolbar">
@@ -78,23 +89,23 @@
         </section>
 
         <section class="section glass" data-reveal>
-          <h2>学习重点</h2>
+          <h2>近期技术重点</h2>
           <div class="grid-2">
             <article class="feature-card">
-              <h3>并发模型</h3>
-              <p>持续练习线程池、任务队列和无锁结构，关注吞吐、延迟和可维护性平衡。</p>
+              <h3>ECS 数据结构</h3>
+              <p>重点实现过 entity generation 校验、Sparse Set 组件存储、swap-remove 删除和组件快照遍历。</p>
             </article>
             <article class="feature-card">
-              <h3>工程化实践</h3>
-              <p>强调构建系统、模块划分、日志与调试流程，让项目具备长期迭代能力。</p>
+              <h3>并发与任务提交</h3>
+              <p>练习过 CommandBuffer 集中 flush、线程池资源加载、读写锁保护和主线程收割结果的拆分方式。</p>
             </article>
             <article class="feature-card">
-              <h3>系统视角</h3>
-              <p>在性能和可靠性之间做合理取舍，逐步建立可复用的工程设计方法。</p>
+              <h3>热更新与配置解析</h3>
+              <p>做过目录扫描、资源缓存、JSON/YAML 解析、inotify 事件监听和失败时回退扫描的热更新流程。</p>
             </article>
             <article class="feature-card">
-              <h3>输出沉淀</h3>
-              <p>把实践过程整理成笔记和可运行示例，形成自己的学习资料库。</p>
+              <h3>AI 辅助工程模块</h3>
+              <p>在项目里补过规则诊断器、配置解释模块和 Provider 接口抽象，用来把 AI 能力和核心系统逻辑解耦。</p>
             </article>
           </div>
         </section>
