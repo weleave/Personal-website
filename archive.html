@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="weleave 的时间轴归档页：按月份聚合项目和学习笔记。" />
+    <title>weleave | 时间轴归档</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=ZCOOL+QingKe+HuangYou&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="cursor-orb"></div>
+    <div class="page-wipe" id="page-wipe"></div>
+
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="./index.html" data-transition>weleave</a>
+        <nav class="nav-links">
+          <a class="nav-link" data-page="index.html" href="./index.html" data-transition>主页</a>
+          <a class="nav-link" data-page="skills.html" href="./skills.html" data-transition>技能站</a>
+          <a class="nav-link" data-page="projects.html" href="./projects.html" data-transition>项目库</a>
+          <a class="nav-link" data-page="notes.html" href="./notes.html" data-transition>笔记页</a>
+          <a class="nav-link" data-page="archive.html" href="./archive.html" data-transition>时间轴</a>
+          <a class="nav-link" data-page="playground.html" href="./playground.html" data-transition>游乐场</a>
+          <a class="nav-link" data-page="contact.html" href="./contact.html" data-transition>联系</a>
+        </nav>
+        <div class="top-tools">
+          <div class="theme-switcher">
+            <button class="theme-dot" type="button" data-theme="default" aria-label="默认主题"></button>
+            <button class="theme-dot" type="button" data-theme="ocean" aria-label="海洋主题"></button>
+            <button class="theme-dot" type="button" data-theme="sunset" aria-label="暖阳主题"></button>
+          </div>
+          <a class="btn small ghost" href="./projects.html" data-transition>返回项目库</a>
+        </div>
+      </header>
+
+      <main>
+        <section class="section glass" data-reveal>
+          <p class="eyebrow">归档页面</p>
+          <h2>时间轴归档</h2>
+          <p>这里会自动把项目和学习笔记按月份聚合，方便回顾每个阶段做了什么。</p>
+        </section>
+
+        <section class="section glass" id="archive-root" data-reveal>
+          <h2>月份记录</h2>
+          <div class="filter-bar">
+            <select id="archive-type-filter" class="editor-select filter-field">
+              <option value="全部">全部内容</option>
+              <option value="项目">只看项目</option>
+              <option value="笔记">只看笔记</option>
+            </select>
+          </div>
+          <div class="archive-list" id="archive-list"></div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>&copy; <span id="year"></span> weleave · 时间轴归档</p>
+      </footer>
+    </div>
+
+    <button id="back-top-btn" class="back-top is-hidden" type="button" aria-label="返回顶部">↑</button>
+    <div id="toast" class="toast"></div>
+    <script src="./script.js"></script>
+  </body>
+</html>

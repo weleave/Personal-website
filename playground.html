@@ -3,11 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<< HEAD
+    <meta name="description" content="weleave 的游乐场页：提供一些学习相关的趣味小工具。" />
+    <title>weleave | 游乐场</title>
+=======
     <meta
       name="description"
       content="weleave 的灵感游乐场，提供本地便签、随机点子卡和专注计时器。"
     />
     <title>weleave | 灵感游乐场</title>
+>>>>>>> 9e03aacfd4b40b02c475f6fb02bcfbee6b1c4ac7
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,14 +32,74 @@
           <a class="nav-link" data-page="index.html" href="./index.html" data-transition>主页</a>
           <a class="nav-link" data-page="skills.html" href="./skills.html" data-transition>技能站</a>
           <a class="nav-link" data-page="projects.html" href="./projects.html" data-transition>项目库</a>
+<<<<<<< HEAD
+          <a class="nav-link" data-page="notes.html" href="./notes.html" data-transition>笔记页</a>
+          <a class="nav-link" data-page="archive.html" href="./archive.html" data-transition>时间轴</a>
+          <a class="nav-link" data-page="playground.html" href="./playground.html" data-transition>游乐场</a>
+          <a class="nav-link" data-page="contact.html" href="./contact.html" data-transition>联系</a>
+        </nav>
+        <div class="top-tools">
+          <div class="theme-switcher">
+            <button class="theme-dot" type="button" data-theme="default" aria-label="默认主题"></button>
+            <button class="theme-dot" type="button" data-theme="ocean" aria-label="海洋主题"></button>
+            <button class="theme-dot" type="button" data-theme="sunset" aria-label="暖阳主题"></button>
+          </div>
+          <a class="btn small ghost" href="./notes.html" data-transition>写笔记</a>
+        </div>
+=======
           <a class="nav-link" data-page="playground.html" href="./playground.html" data-transition>游乐场</a>
           <a class="nav-link" data-page="contact.html" href="./contact.html" data-transition>联系</a>
         </nav>
         <a class="btn small ghost" href="./projects.html" data-transition>返回项目页</a>
+>>>>>>> 9e03aacfd4b40b02c475f6fb02bcfbee6b1c4ac7
       </header>
 
       <main>
         <section class="section glass" data-reveal>
+<<<<<<< HEAD
+          <p class="eyebrow">趣味功能</p>
+          <h2>学习游乐场</h2>
+          <p>这里放一些轻量的学习辅助小工具，适合用来随机找练习方向或做短时专注。</p>
+        </section>
+
+        <section class="section glass" id="playground-root" data-reveal>
+          <h2>工具集合</h2>
+          <div class="playground-grid">
+            <article class="tool-card">
+              <h3>随机练习题</h3>
+              <div class="tool-output" id="idea-output">点击按钮生成一个练习方向。</div>
+              <div class="editor-toolbar">
+                <button type="button" class="btn small" id="idea-generate">生成题目</button>
+              </div>
+            </article>
+
+            <article class="tool-card">
+              <h3>代码片段</h3>
+              <div class="tool-output code-output" id="snippet-output">std::future&lt;int&gt; result;</div>
+              <div class="editor-toolbar">
+                <button type="button" class="btn small" id="snippet-generate">换一个片段</button>
+              </div>
+            </article>
+
+            <article class="tool-card">
+              <h3>专注计时</h3>
+              <input class="editor-input" id="focus-minutes" type="number" min="1" max="120" value="25" />
+              <div class="timer-display" id="timer-display">25:00</div>
+              <div class="editor-toolbar">
+                <button type="button" class="btn small" id="focus-start">开始</button>
+                <button type="button" class="btn small ghost" id="focus-reset">重置</button>
+              </div>
+            </article>
+
+            <article class="tool-card">
+              <h3>配色灵感</h3>
+              <div class="palette-strip" id="palette-output"></div>
+              <div class="editor-toolbar">
+                <button type="button" class="btn small" id="palette-shuffle">生成配色</button>
+              </div>
+            </article>
+          </div>
+=======
           <p class="eyebrow">独立功能页 · 便签 / 随机灵感 / 专注计时</p>
           <h2>灵感游乐场</h2>
           <p>
@@ -119,14 +184,24 @@
             </p>
             <p class="idea-subtitle" id="idea-card-tag">#网页小实验</p>
           </article>
+>>>>>>> 9e03aacfd4b40b02c475f6fb02bcfbee6b1c4ac7
         </section>
       </main>
 
       <footer class="footer">
+<<<<<<< HEAD
+        <p>&copy; <span id="year"></span> weleave · 学习游乐场</p>
+      </footer>
+    </div>
+
+    <button id="back-top-btn" class="back-top is-hidden" type="button" aria-label="返回顶部">↑</button>
+    <div id="toast" class="toast"></div>
+=======
         <p>&copy; <span id="year"></span> weleave · 灵感游乐场</p>
       </footer>
     </div>
 
+>>>>>>> 9e03aacfd4b40b02c475f6fb02bcfbee6b1c4ac7
     <script src="./script.js"></script>
   </body>
 </html>
