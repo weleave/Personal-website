@@ -3,16 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<<<<<<< HEAD
     <meta name="description" content="weleave 的项目库：支持搜索、状态筛选和技术标签多选过滤。" />
     <title>weleave | 项目库</title>
-=======
-    <meta
-      name="description"
-      content="weleave 的项目展示页，整理 SceneMind ECS、ReloadSense Tool 等 C++ 工程项目。"
-    />
-    <title>weleave | 项目实现</title>
->>>>>>> 9e03aacfd4b40b02c475f6fb02bcfbee6b1c4ac7
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -32,7 +24,6 @@
           <a class="nav-link" data-page="index.html" href="./index.html" data-transition>主页</a>
           <a class="nav-link" data-page="skills.html" href="./skills.html" data-transition>技能站</a>
           <a class="nav-link" data-page="projects.html" href="./projects.html" data-transition>项目库</a>
-<<<<<<< HEAD
           <a class="nav-link" data-page="notes.html" href="./notes.html" data-transition>笔记页</a>
           <a class="nav-link" data-page="archive.html" href="./archive.html" data-transition>时间轴</a>
           <a class="nav-link" data-page="playground.html" href="./playground.html" data-transition>游乐场</a>
@@ -46,33 +37,17 @@
           </div>
           <a class="btn small ghost" href="./archive.html" data-transition>看归档</a>
         </div>
-=======
-          <a class="nav-link" data-page="playground.html" href="./playground.html" data-transition>游乐场</a>
-          <a class="nav-link" data-page="contact.html" href="./contact.html" data-transition>联系</a>
-        </nav>
-        <a class="btn small ghost" href="./skills.html" data-transition>查看技能</a>
->>>>>>> 9e03aacfd4b40b02c475f6fb02bcfbee6b1c4ac7
       </header>
 
       <main>
         <section class="section glass" data-reveal>
-<<<<<<< HEAD
           <p class="eyebrow">项目页面</p>
           <h2>项目库</h2>
           <p>这里记录我的工程实践。可以按关键词、状态和多个技术标签组合过滤项目。</p>
-=======
-          <p class="eyebrow">项目页面 · C++ / 系统 / AI 工具</p>
-          <h2>项目实现记录</h2>
-          <p>
-            这里主要放我自己实现过的工程项目，重点保留每个项目的设计目标、核心模块和实现细节。
-            页面支持编辑模式，方便我后续继续补充新项目或调整展示内容。
-          </p>
->>>>>>> 9e03aacfd4b40b02c475f6fb02bcfbee6b1c4ac7
         </section>
 
         <section class="section glass" id="projects-editor-root" data-reveal>
           <h2>项目展示</h2>
-<<<<<<< HEAD
           <div class="filter-bar">
             <input id="project-search-input" class="editor-input filter-field" type="text" placeholder="搜索项目名称、标签、描述关键字" />
             <select id="project-filter-select" class="editor-select filter-field">
@@ -113,122 +88,6 @@
             </div>
             <div class="editor-row">
               <textarea class="editor-textarea" id="project-bullets-input" placeholder="项目亮点，每行一条（至少一条）"></textarea>
-=======
-          <div class="project-grid" id="projects-list">
-            <article class="project-card">
-              <div class="project-head">
-                <h3>SceneMind ECS · 灵境 ECS 引擎原型</h3>
-                <span>2026.01 - 2026.04</span>
-              </div>
-              <p class="project-meta">个人项目 · C++20 / ECS / 并发 / AI 规则诊断</p>
-              <ul>
-                <li>实现 index + generation 实体句柄、Sparse Set 组件存储和 swap-remove 删除，支持组件快速查询与连续遍历。</li>
-                <li>设计 CommandBuffer + flush_commands() 的结构修改流程，并实现组件快照 + worker 分块计算的并行物理更新示例。</li>
-                <li>实现线程池式文本资源加载、JSON/YAML 场景批量加载、规则场景生成和 World 运行时诊断快照导出。</li>
-                <li>完成 10 万实体创建/销毁压测、场景生成加载演示和基础自动化测试，项目可通过 CMake 独立构建运行。</li>
-              </ul>
-              <a
-                class="project-link"
-                href="https://github.com/weleave/mini-ecs-cpp"
-                target="_blank"
-                rel="noopener"
-              >
-                查看项目仓库
-              </a>
-            </article>
-
-            <article class="project-card">
-              <div class="project-head">
-                <h3>ReloadSense Tool · 智能配置热更新工具</h3>
-                <span>2026.03 - 2026.04</span>
-              </div>
-              <p class="project-meta">个人项目 · C++20 / inotify / JSON/YAML / AI 配置分析</p>
-              <ul>
-                <li>实现 DirectoryScanner、ResourceStore、FileWatcher、HotReloadApp 四层模块，支持文本与 JSON/YAML 配置热加载。</li>
-                <li>将文件变更检测从纯轮询升级为 Linux inotify 优先、扫描兜底的方案，保留原 poll(root) 接口以减少主流程改动。</li>
-                <li>新增 ConfigInspector / ConfigAnalyzer / AIProvider 配置分析模块，输出字段解释、异常检查、冲突提示和缺省字段建议。</li>
-                <li>支持 DeepSeek 摘要生成失败自动回退本地规则分析，并导出 txt/json 报告；补充基础测试和 README 实现说明。</li>
-              </ul>
-              <a
-                class="project-link"
-                href="https://github.com/weleave/HotReloadKit"
-                target="_blank"
-                rel="noopener"
-              >
-                查看项目仓库
-              </a>
-            </article>
-
-            <article class="project-card">
-              <div class="project-head">
-                <h3>Browser Plug-in · ChatGPT 对话导出插件</h3>
-                <span>2026.04</span>
-              </div>
-              <p class="project-meta">个人小工具 · 浏览器插件</p>
-              <ul>
-                <li>实现 ChatGPT 对话内容导出功能，方便把聊天记录整理成本地文件保存和后续复盘。</li>
-                <li>主要用于验证浏览器插件的基础结构、页面脚本交互和导出流程，整体实现相对轻量。</li>
-                <li>这部分代码主要借助 AI 辅助完成，我更多是做功能需求整理、结果验证和少量调整。</li>
-              </ul>
-              <a
-                class="project-link"
-                href="https://github.com/weleave/ChatGPT_Word_Exporter"
-                target="_blank"
-                rel="noopener"
-              >
-                查看项目仓库
-              </a>
-            </article>
-          </div>
-
-          <div class="editor-toolbar">
-            <button type="button" class="btn small" id="projects-edit-toggle">开启编辑</button>
-            <button type="button" class="btn small ghost is-hidden" id="projects-reset-btn">
-              恢复默认
-            </button>
-          </div>
-
-          <div class="editor-panel is-hidden" id="projects-editor-panel">
-            <p>按顺序填写项目信息并新增。项目亮点每行一条。</p>
-            <div class="editor-row">
-              <input
-                type="text"
-                class="editor-input"
-                id="project-title-input"
-                placeholder="项目名称（必填）"
-                maxlength="60"
-              />
-              <input
-                type="text"
-                class="editor-input"
-                id="project-period-input"
-                placeholder="时间（例如：2026.04 - 2026.06）"
-                maxlength="40"
-              />
-            </div>
-            <div class="editor-row">
-              <input
-                type="text"
-                class="editor-input"
-                id="project-role-input"
-                placeholder="身份（例如：个人项目）"
-                maxlength="40"
-              />
-              <input
-                type="text"
-                class="editor-input"
-                id="project-link-input"
-                placeholder="仓库链接（可选）"
-                maxlength="200"
-              />
-            </div>
-            <div class="editor-row">
-              <textarea
-                class="editor-textarea"
-                id="project-bullets-input"
-                placeholder="项目亮点，每行一条"
-              ></textarea>
->>>>>>> 9e03aacfd4b40b02c475f6fb02bcfbee6b1c4ac7
             </div>
             <div class="editor-row">
               <button type="button" class="btn small alt" id="project-add-btn">新增项目</button>
@@ -237,31 +96,6 @@
 
           <div class="status-text" id="projects-status">浏览模式</div>
         </section>
-<<<<<<< HEAD
-=======
-
-        <section class="section glass" data-reveal>
-          <h2>项目实现原则</h2>
-          <div class="grid-2">
-            <article class="feature-card">
-              <h3>可运行验证</h3>
-              <p>每个项目都尽量保留 CMake 构建方式、demo 入口和测试命令，不只停留在接口设计。</p>
-            </article>
-            <article class="feature-card">
-              <h3>少侵入扩展</h3>
-              <p>新增功能时优先做外挂式模块，通过少量接入点扩展，而不是直接重写原有核心逻辑。</p>
-            </article>
-            <article class="feature-card">
-              <h3>有技术细节</h3>
-              <p>项目说明里会尽量把数据结构、并发边界、状态流转和错误处理策略写清楚，方便面试复盘。</p>
-            </article>
-            <article class="feature-card">
-              <h3>持续补充</h3>
-              <p>后续如果继续做新项目，会直接在这个页面按相同结构补充，保证网站内容能长期维护。</p>
-            </article>
-          </div>
-        </section>
->>>>>>> 9e03aacfd4b40b02c475f6fb02bcfbee6b1c4ac7
       </main>
 
       <footer class="footer">
@@ -269,11 +103,8 @@
       </footer>
     </div>
 
-<<<<<<< HEAD
     <button id="back-top-btn" class="back-top is-hidden" type="button" aria-label="返回顶部">↑</button>
     <div id="toast" class="toast"></div>
-=======
->>>>>>> 9e03aacfd4b40b02c475f6fb02bcfbee6b1c4ac7
     <script src="./script.js"></script>
   </body>
 </html>
