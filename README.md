@@ -1,7 +1,7 @@
-# weleave 个人网站
+# weleave 技术主页
 
-这个网站是我用来记录自己学习内容和实践过程的。
+个人主页围绕游戏服务端、C++ 异步网络、RPC 基础设施与智能日志分析展开，集中展示实习项目、技术能力和工程复盘。
 
-我会持续更新平时做过的项目、技术笔记和阶段总结。
+主要项目：MultiCA 多人在线对战服务端、KasioRpc 高性能异步 RPC 框架、LogScope 智能日志分析与异常诊断平台。
 
-https://weleave.github.io/Personal-website/
+主页：https://weleavel.github.io/Personal-website/

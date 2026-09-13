@@ -442,6 +442,17 @@ h4 {
   font-size: 0.9rem;
 }
 
+.compact-list {
+  margin: 10px 0 0;
+  padding-left: 20px;
+  color: #4f5870;
+  font-size: 0.9rem;
+}
+
+.compact-list li + li {
+  margin-top: 7px;
+}
+
 .feature-card .go-link {
   margin-top: 10px;
   display: inline-block;
@@ -634,6 +645,9 @@ h4 {
   justify-content: space-between;
   gap: 8px;
   align-items: flex-start;
+}
+
+.project-card.is-editing .project-head {
   padding-right: 48px;
 }
 
@@ -987,8 +1001,39 @@ h4 {
 
 @media (max-width: 760px) {
   .topbar {
-    align-items: flex-start;
+    align-items: stretch;
     flex-direction: column;
+    border-radius: 18px;
+  }
+
+  .nav-links {
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 3px;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-link {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .top-tools {
+    justify-content: space-between;
+  }
+
+  .project-head {
+    display: block;
+  }
+
+  .project-head span {
+    display: block;
+    margin-top: 3px;
   }
 
   .nav-links {

@@ -3,210 +3,156 @@
   const qsa = (selector, root = document) => Array.from(root.querySelectorAll(selector));
 
   const STORAGE_KEYS = {
-    theme: "weleave.theme.v5",
-    skills: "weleave.skills.v5",
-    projects: "weleave.projects.v5",
-    notes: "weleave.notes.v5",
+    theme: "weleave.theme.v6",
+    skills: "weleave.skills.v6",
+    projects: "weleave.projects.v6",
+    notes: "weleave.notes.v6",
   };
 
   const DEFAULT_SKILLS = [
     "C++20",
-    "C++17",
     "STL / RAII",
-    "模板与泛型",
-    "移动语义",
     "智能指针",
-    "异常安全",
-    "并发编程",
+    "模板与协程",
+    "Standalone ASIO",
+    "Protobuf",
+    "TCP / KCP",
+    "异步 RPC",
+    "粘包与拆包",
+    "心跳保活",
+    "断线重连",
+    "状态恢复",
+    "PVE / PVP",
+    "多人事件广播",
+    "怪物寻路",
     "线程池",
-    "std::future",
-    "condition_variable",
+    "io_context / strand",
+    "原子状态机",
+    "并发安全",
+    "Python 3.11",
+    "asyncio",
+    "CPython C API",
+    "SQLite WAL / FTS5",
+    "LLM / ReAct",
+    "Prometheus",
     "CMake",
+    "vcpkg",
     "Linux / WSL",
     "Git / GitHub",
-    "调试与日志",
-    "单元测试",
-    "性能分析",
-    "JSON / YAML",
-    "MySQL",
-    "Redis",
-    "ECS 架构",
-    "资源热更新",
-    "文件系统监控",
-    "工程化构建",
-    "GitHub Pages",
-    "HTML / CSS",
-    "JavaScript",
-    "localStorage",
-    "数据导入导出",
-    "项目文档整理",
-    "断点调试",
-    "内存泄漏排查",
-    "接口边界设计",
-    "学习计划拆解",
-    "技术复盘"
+    "单元 / 集成测试",
+    "TSAN / ASAN",
+    "CI 与交付"
   ];
 
   const DEFAULT_PROJECTS = [
     {
-      id: "threadpool-cpp",
-      title: "C++ ThreadPool 学习实现",
-      period: "2025.10 - 2025.11",
-      role: "学习项目",
+      id: "multica-game-server",
+      title: "MultiCA 多人在线对战服务端",
+      period: "2026.05 - 2026.08",
+      role: "网易互娱 · 阴阳师事业部 · 游戏服务端开发实习",
       status: "已完成",
-      tags: ["C++", "并发", "线程池", "future"],
+      tags: ["C++", "游戏服务端", "PVE/PVP", "断线重连", "状态同步", "Multi-Agent"],
       bullets: [
-        "封装任务提交接口，支持 std::future 获取异步结果。",
-        "使用 mutex 与 condition_variable 管理任务队列同步。",
-        "整理等待任务完成、异常传递和优雅关闭等边界行为。"
+        "采用多 Agent 协作拆分网络接入、对局逻辑、怪物行为与测试任务，完成服务端权威的多人在线对战平台。",
+        "支持多个客户端进入同一地图参与 PVE/PVP 战斗，并实现网络异常中断后的重连与对局状态恢复。",
+        "实现怪物自动寻路、服务端行为驱动与击杀事件统计；玩家击杀达到 3 个单位时向同地图客户端广播公告。"
       ],
-      linkHref: "https://github.com/weleave/ThreadPool_CPP",
-      linkText: "查看项目仓库",
-      date: "2025-10-20",
-      createdAt: 1760918400000
+      linkHref: "",
+      linkText: "",
+      date: "2026-08-15",
+      createdAt: 1786723200000
     },
     {
-      id: "cmake-lab",
-      title: "CMake 构建实验记录",
-      period: "2025.11 - 2025.12",
-      role: "学习项目",
+      id: "kasiorpc",
+      title: "KasioRpc 高性能异步 RPC 框架",
+      period: "2026.05 - 2026.08",
+      role: "网易互娱 · 阴阳师事业部 · 服务端基础设施",
       status: "已完成",
-      tags: ["CMake", "工程化", "构建", "脚本"],
+      tags: ["C++20", "ASIO", "Protobuf", "TCP/KCP", "协程", "Python"],
       bullets: [
-        "整理 target、include、link 和多配置构建的基础用法。",
-        "把常用构建命令沉淀为脚本，减少重复操作。",
-        "记录 Debug/Release 参数差异和常见链接错误处理方式。"
+        "基于 C++20、Standalone ASIO 与 Protobuf 实现异步 RPC 框架，支持 TCP 长连接和 KCP/UDP 双传输。",
+        "通过长度前缀解码状态机处理粘包、拆包和异常帧，以 io_context 线程池、连接级 strand 与原子状态机组织并发。",
+        "使用 CPython C API 将 C++ 异步回调桥接为 asyncio Future，并实现断点续传、完整性校验、压缩与加密通道。",
+        "建设 CMake/vcpkg、单元与集成测试、TSAN/ASAN、Prometheus 指标及 manylinux Wheel 交付链路。"
       ],
-      linkHref: "https://github.com/weleave/ThreadPool_CPP",
-      linkText: "查看项目仓库",
-      date: "2025-11-18",
-      createdAt: 1763424000000
+      linkHref: "",
+      linkText: "",
+      date: "2026-08-08",
+      createdAt: 1786118400000
     },
     {
-      id: "mini-ecs",
-      title: "Mini ECS 轻量级实体组件系统",
-      period: "2025.12 - 2026.02",
-      role: "个人项目",
+      id: "logscope",
+      title: "LogScope 智能日志分析与异常诊断平台",
+      period: "2026.05 - 2026.08",
+      role: "网易互娱 · 阴阳师事业部 · 后端与 AI 应用开发",
       status: "已完成",
-      tags: ["C++", "ECS", "架构", "性能"],
+      tags: ["Python", "SQLite", "FTS5", "LLM", "ReAct", "可观测性"],
       bullets: [
-        "实现实体句柄与组件稀疏存储，完成 ECS 原型核心能力。",
-        "采用 generation + swap-remove 机制提升安全性与性能。",
-        "通过压力测试和独立构建验证项目可运行性。"
+        "搭建日志解析、脱敏、模板抽取、指标提取与分类流水线，以分块读取、进程池和有界队列支持 GB 级日志导入。",
+        "构建规则与批量 LLM 级联分类，并基于 SQLite WAL/FTS5 实现多源日志检索和异常对比。",
+        "接入 ReAct 智能诊断，完善断点续拉、幂等重试、容量治理、删除审计和 Webhook 告警。"
       ],
-      linkHref: "https://github.com/weleave/mini-ecs-cpp",
-      linkText: "查看项目仓库",
-      date: "2025-12-22",
-      createdAt: 1766361600000
-    },
-    {
-      id: "hotreload",
-      title: "HotReload 资源热更新工具",
-      period: "2026.02 - 2026.03",
-      role: "个人项目",
-      status: "进行中",
-      tags: ["C++", "热更新", "工具链", "文件系统"],
-      bullets: [
-        "实现配置加载、目录扫描与资源变更检测流程。",
-        "建立增量更新与元信息映射，缩短调试反馈时间。",
-        "覆盖首次加载与重复加载场景，支持持续迭代。"
-      ],
-      linkHref: "https://github.com/weleave/HotReloadKit",
-      linkText: "查看项目仓库",
-      date: "2026-02-18",
-      createdAt: 1771372800000
-    },
-    {
-      id: "personal-site",
-      title: "GitHub Pages 个人学习站",
-      period: "2026.04 - 2026.04",
-      role: "个人网站",
-      status: "进行中",
-      tags: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
-      bullets: [
-        "构建多页面学习站，包含技能、项目、笔记、归档和游乐场。",
-        "使用 localStorage 实现本地可编辑内容和数据导入导出。",
-        "补充主题切换、筛选、归档聚合和趣味工具页面。"
-      ],
-      linkHref: "https://github.com/weleave/ThreadPool_CPP",
-      linkText: "查看项目仓库",
-      date: "2026-04-28",
-      createdAt: 1777334400000
+      linkHref: "",
+      linkText: "",
+      date: "2026-07-28",
+      createdAt: 1785168000000
     }
   ];
 
   const DEFAULT_NOTES = [
     {
-      id: "note-2025-10-threadpool",
-      title: "线程池基本结构梳理",
-      date: "2025-10-16",
-      category: "并发",
+      id: "note-2026-06-game-session",
+      title: "多人对战中的会话与状态恢复",
+      date: "2026-06-12",
+      category: "游戏服务端",
       status: "已完成",
-      summary: "记录工作线程、任务队列、条件变量和任务提交接口的基本关系。",
-      createdAt: 1760572800000
+      summary: "梳理客户端连接、玩家身份、对局状态之间的映射，以及网络中断后的重连与状态恢复流程。",
+      createdAt: 1781193600000
     },
     {
-      id: "note-2025-10-future",
-      title: "std::future 与 packaged_task 复盘",
-      date: "2025-10-28",
-      category: "C++",
+      id: "note-2026-06-battle-sync",
+      title: "服务端权威的 PVE/PVP 事件同步",
+      date: "2026-06-25",
+      category: "游戏服务端",
       status: "已完成",
-      summary: "整理异步结果返回、异常传递和任务包装的使用方式。",
-      createdAt: 1761609600000
+      summary: "复盘同地图多客户端的移动、战斗与公告事件如何由服务端统一处理并广播。",
+      createdAt: 1782316800000
     },
     {
-      id: "note-2025-11-cmake",
-      title: "CMake 多配置构建整理",
-      date: "2025-11-12",
-      category: "CMake",
+      id: "note-2026-07-asio-strand",
+      title: "io_context 线程池与连接级 strand",
+      date: "2026-07-05",
+      category: "异步并发",
       status: "已完成",
-      summary: "完成 Debug/Release 构建参数对比，并把常用命令写成脚本提高复用效率。",
-      createdAt: 1762905600000
+      summary: "记录多执行器环境下如何串行化单连接事件，在并发吞吐和状态安全之间取得平衡。",
+      createdAt: 1783180800000
     },
     {
-      id: "note-2025-12-ecs-storage",
-      title: "ECS 组件存储结构复盘",
-      date: "2025-12-18",
-      category: "ECS",
+      id: "note-2026-07-frame-decoder",
+      title: "TCP 流式协议与解码状态机",
+      date: "2026-07-15",
+      category: "网络编程",
       status: "已完成",
-      summary: "整理 sparse set、句柄 generation 和 swap-remove 的优缺点。",
-      createdAt: 1766016000000
+      summary: "整理长度前缀协议在粘包、拆包、异常帧和最大消息限制下的边界处理。",
+      createdAt: 1784044800000
     },
     {
-      id: "note-2026-01-raii",
-      title: "RAII 与资源生命周期记录",
-      date: "2026-01-09",
-      category: "现代 C++",
+      id: "note-2026-07-python-bridge",
+      title: "从 C++ 回调桥接到 asyncio Future",
+      date: "2026-07-28",
+      category: "Python 绑定",
       status: "已完成",
-      summary: "复盘智能指针、析构释放和异常安全之间的关系。",
-      createdAt: 1767916800000
+      summary: "总结 CPython C API、GIL 与事件循环线程安全投递在异步绑定中的配合方式。",
+      createdAt: 1785168000000
     },
     {
-      id: "note-2026-02-hotreload",
-      title: "资源热更新文件监控方案",
-      date: "2026-02-20",
-      category: "工具链",
-      status: "进行中",
-      summary: "记录轮询、时间戳和目录快照三种方案的实现成本和适用场景。",
-      createdAt: 1771545600000
-    },
-    {
-      id: "note-2026-03-debug",
-      title: "C++ 调试与日志定位流程",
-      date: "2026-03-15",
-      category: "调试",
-      status: "进行中",
-      summary: "整理编译错误、运行时断点、日志分层和最小复现的排查顺序。",
-      createdAt: 1773532800000
-    },
-    {
-      id: "note-2026-04-threadpool-cancel",
-      title: "线程池任务取消策略调研",
-      date: "2026-04-26",
-      category: "并发",
-      status: "进行中",
-      summary: "对比共享标志位、任务包装器和队列清理三种方式，准备做可中断版本验证。",
-      createdAt: 1777161600000
+      id: "note-2026-08-logscope",
+      title: "日志流水线与 LLM 级联分类",
+      date: "2026-08-10",
+      category: "智能运维",
+      status: "已完成",
+      summary: "复盘 GB 级日志导入、规则与 LLM 级联分类、多源检索和诊断链路中的稳定性设计。",
+      createdAt: 1786291200000
     }
   ];
   function safeParseJSON(text, fallback = null) {
@@ -370,25 +316,6 @@
     dots.forEach((dot) => dot.addEventListener("click", () => applyTheme(dot.dataset.theme || "default")));
   }
 
-  async function fileExists(path) {
-    try {
-      const head = await fetch(path, { method: "HEAD" });
-      if (head.ok) return true;
-      const get = await fetch(path, { method: "GET" });
-      return get.ok;
-    } catch {
-      return false;
-    }
-  }
-
-  async function initOptionalAssets() {
-    if (window.location.protocol === "file:") return;
-    const avatarFrame = qs("#avatar-frame");
-    if (avatarFrame && (await fileExists("./avatar.jpg"))) avatarFrame.classList.add("has-image");
-    const resumeLink = qs("#resume-link");
-    if (resumeLink && !(await fileExists("./resume.jpg"))) resumeLink.classList.add("is-hidden");
-  }
-
   function initCopyButtons() {
     qsa("[data-copy-text]").forEach((btn) => {
       btn.addEventListener("click", async () => {
@@ -415,6 +342,7 @@
   function createProjectCard(project, index, editMode = false) {
     const card = document.createElement("article");
     card.className = "project-card";
+    card.classList.toggle("is-editing", editMode);
     if (editMode) {
       const remove = document.createElement("button");
       remove.type = "button";
@@ -456,13 +384,15 @@
     });
     card.appendChild(ul);
 
-    const link = document.createElement("a");
-    link.className = "project-link";
-    link.href = project.linkHref || "#";
-    link.target = "_blank";
-    link.rel = "noopener";
-    link.textContent = project.linkText || "查看项目仓库";
-    card.appendChild(link);
+    if (project.linkHref && project.linkHref !== "#") {
+      const link = document.createElement("a");
+      link.className = "project-link";
+      link.href = project.linkHref;
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.textContent = project.linkText || "查看项目仓库";
+      card.appendChild(link);
+    }
     return card;
   }
 
@@ -1090,7 +1020,6 @@
   initCursorOrb();
   initBackTop();
   initThemeSwitcher();
-  initOptionalAssets();
   initCopyButtons();
   initSkillsEditor();
   initProjectsEditor();

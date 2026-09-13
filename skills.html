@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="weleave 的技能站：维护技术栈和学习方向。" />
-    <title>weleave | 技能站</title>
+    <meta name="description" content="weleave 的技术能力：游戏服务端、C++ 异步网络、并发稳定性、工程交付与智能日志分析。" />
+    <title>weleave | 技术能力</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,11 +21,11 @@
         <a class="brand" href="./index.html" data-transition>weleave</a>
         <nav class="nav-links">
           <a class="nav-link" data-page="index.html" href="./index.html" data-transition>主页</a>
-          <a class="nav-link" data-page="skills.html" href="./skills.html" data-transition>技能站</a>
-          <a class="nav-link" data-page="projects.html" href="./projects.html" data-transition>项目库</a>
-          <a class="nav-link" data-page="notes.html" href="./notes.html" data-transition>笔记页</a>
-          <a class="nav-link" data-page="archive.html" href="./archive.html" data-transition>时间轴</a>
-          <a class="nav-link" data-page="playground.html" href="./playground.html" data-transition>游乐场</a>
+          <a class="nav-link" data-page="skills.html" href="./skills.html" data-transition>技术能力</a>
+          <a class="nav-link" data-page="projects.html" href="./projects.html" data-transition>实习项目</a>
+          <a class="nav-link" data-page="notes.html" href="./notes.html" data-transition>技术复盘</a>
+          <a class="nav-link" data-page="archive.html" href="./archive.html" data-transition>经历时间轴</a>
+          <a class="nav-link" data-page="playground.html" href="./playground.html" data-transition>工具箱</a>
           <a class="nav-link" data-page="contact.html" href="./contact.html" data-transition>联系</a>
         </nav>
         <div class="top-tools">
@@ -40,9 +40,9 @@
 
       <main>
         <section class="section glass" data-reveal>
-          <p class="eyebrow">技能页面</p>
-          <h2>技能地图</h2>
-          <p>这里维护我的技术栈和学习方向，支持新增、删除、导入和导出。</p>
+          <p class="eyebrow">能力画像</p>
+          <h2>技术能力</h2>
+          <p>围绕游戏服务端、异步网络与工程稳定性构建能力体系，标签可在浏览器本地维护和导出。</p>
         </section>
 
         <section class="section glass" id="skills-editor-root" data-reveal>
@@ -66,30 +66,79 @@
         </section>
 
         <section class="section glass" data-reveal>
-          <h2>学习侧重点</h2>
+          <h2>工程能力</h2>
+          <p>能力描述来自 MultiCA、KasioRpc 与 LogScope 的实际开发，覆盖业务服务端、网络基础设施和可观测性工具。</p>
           <div class="grid-2">
             <article class="feature-card">
-              <h3>并发系统</h3>
-              <p>线程池、任务调度、条件变量、future、任务取消和优雅关闭。</p>
+              <h3>网络协议与 RPC</h3>
+              <ul class="compact-list">
+                <li>基于 TCP/KCP 与 Protobuf 构建双传输 RPC 链路，理解可靠传输与实时性之间的取舍。</li>
+                <li>实现长度前缀协议、粘包/半包处理、消息尺寸校验、心跳保活、单向调用与服务注册分发。</li>
+                <li>能够围绕连接建立、请求路由、超时取消与连接关闭设计完整生命周期。</li>
+              </ul>
             </article>
             <article class="feature-card">
-              <h3>现代 C++</h3>
-              <p>RAII、移动语义、模板、智能指针、chrono、filesystem 和 STL 容器。</p>
+              <h3>游戏服务端</h3>
+              <ul class="compact-list">
+                <li>具备服务端权威的多人同图对战开发经验，支持多客户端并发接入及 PVE/PVP 事件处理。</li>
+                <li>实现网络中断重连、玩家状态恢复、怪物自动寻路、战斗结算和跨客户端公告广播。</li>
+                <li>关注房间、玩家、单位与战斗事件的边界拆分，保证状态变更可追踪、可校验。</li>
+              </ul>
             </article>
             <article class="feature-card">
-              <h3>工程化</h3>
-              <p>CMake target、模块划分、日志、测试、脚本化构建和 Git 工作流。</p>
+              <h3>C++20 与异步并发</h3>
+              <ul class="compact-list">
+                <li>熟悉 RAII、智能指针、模板、lambda、移动语义与现代 STL，能够组织可维护的模块边界。</li>
+                <li>使用协程、io_context 线程池与 strand 编排异步任务，控制回调时序并减少共享状态竞争。</li>
+                <li>理解原子状态机、条件变量、有界队列及任务生命周期，能够排查死锁、竞态和悬空访问。</li>
+              </ul>
             </article>
             <article class="feature-card">
-              <h3>系统设计</h3>
-              <p>ECS 数据布局、资源热更新、缓存策略和可复用工具抽象。</p>
+              <h3>稳定性与可观测性</h3>
+              <ul class="compact-list">
+                <li>围绕超时、重试、断线、异常隔离和资源回收设计失败路径，避免局部故障放大。</li>
+                <li>使用 Prometheus 指标、结构化日志与诊断命令观测请求耗时、错误率、积压和容量水位。</li>
+                <li>能够从运行现象回溯连接、协程、队列和数据层，形成定位—修复—回归验证闭环。</li>
+              </ul>
+            </article>
+            <article class="feature-card">
+              <h3>数据检索与存储</h3>
+              <ul class="compact-list">
+                <li>使用 SQLite WAL/FTS5 构建日志索引，兼顾写入吞吐、全文检索与单机部署成本。</li>
+                <li>支持结构化条件、全文关键词与自然语言查询，能够设计多数据源路由和统一结果模型。</li>
+                <li>理解索引、缓存、分页和容量治理对查询延迟及资源占用的影响。</li>
+              </ul>
+            </article>
+            <article class="feature-card">
+              <h3>Python 绑定与跨语言协作</h3>
+              <ul class="compact-list">
+                <li>基于 CPython C API 暴露 C++ RPC 能力，处理参数转换、异常映射、引用计数和 GIL 协作。</li>
+                <li>将 C++ 异步回调安全桥接为 asyncio Future，使 Python 侧保持自然的 await 调用体验。</li>
+                <li>能够设计稳定的跨语言接口，减少运行时细节对上层业务代码的侵入。</li>
+              </ul>
+            </article>
+            <article class="feature-card">
+              <h3>AI 工程化</h3>
+              <ul class="compact-list">
+                <li>在日志分析中组合规则、轻量模型与大模型级联，按置信度和成本选择处理路径。</li>
+                <li>实现基于 ReAct 的诊断流程，管理工具调用、上下文预算、失败降级与结果可解释性。</li>
+                <li>强调 AI 能力的边界控制：保留确定性规则兜底，避免外部模型故障阻塞核心流程。</li>
+              </ul>
+            </article>
+            <article class="feature-card">
+              <h3>工程质量与交付</h3>
+              <ul class="compact-list">
+                <li>熟悉 Linux/WSL、CMake、vcpkg 与 Git，能够完成依赖管理、构建调试和多模块协作。</li>
+                <li>通过单元测试、集成测试、压力测试及 TSAN/ASAN 验证协议边界、并发安全和资源释放。</li>
+                <li>具备 CI 与 Python manylinux wheel 交付实践，关注可复现构建、版本兼容和发布质量。</li>
+              </ul>
             </article>
           </div>
         </section>
       </main>
 
       <footer class="footer">
-        <p>&copy; <span id="year"></span> weleave · 技能站</p>
+        <p>&copy; <span id="year"></span> weleave · 技术能力</p>
       </footer>
     </div>
     <button id="back-top-btn" class="back-top is-hidden" type="button" aria-label="返回顶部">↑</button>

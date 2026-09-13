@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="weleave 的学习主页：记录技术学习、项目实践和阶段复盘。" />
-    <title>weleave | 学习主页</title>
+    <meta name="description" content="weleave 的技术主页：聚焦游戏服务端、C++ 异步网络、RPC 基础设施与智能日志分析。" />
+    <title>weleave | 游戏服务端与 C++ 后端开发</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,11 +22,11 @@
         <a class="brand" href="./index.html" data-transition>weleave</a>
         <nav class="nav-links">
           <a class="nav-link" data-page="index.html" href="./index.html" data-transition>主页</a>
-          <a class="nav-link" data-page="skills.html" href="./skills.html" data-transition>技能站</a>
-          <a class="nav-link" data-page="projects.html" href="./projects.html" data-transition>项目库</a>
-          <a class="nav-link" data-page="notes.html" href="./notes.html" data-transition>笔记页</a>
-          <a class="nav-link" data-page="archive.html" href="./archive.html" data-transition>时间轴</a>
-          <a class="nav-link" data-page="playground.html" href="./playground.html" data-transition>游乐场</a>
+          <a class="nav-link" data-page="skills.html" href="./skills.html" data-transition>技术能力</a>
+          <a class="nav-link" data-page="projects.html" href="./projects.html" data-transition>实习项目</a>
+          <a class="nav-link" data-page="notes.html" href="./notes.html" data-transition>技术复盘</a>
+          <a class="nav-link" data-page="archive.html" href="./archive.html" data-transition>经历时间轴</a>
+          <a class="nav-link" data-page="playground.html" href="./playground.html" data-transition>工具箱</a>
           <a class="nav-link" data-page="contact.html" href="./contact.html" data-transition>联系</a>
         </nav>
         <div class="top-tools">
@@ -42,30 +42,29 @@
       <main>
         <section class="hero">
           <article class="hero-main glass" data-reveal>
-            <p class="eyebrow">学习记录 · 项目实践 · 阶段复盘</p>
-            <h1 class="hero-title">weleave 的 <span class="hero-gradient">技术实验场</span></h1>
+            <p class="eyebrow">C++20 · Game Server · RPC · AI Engineering</p>
+            <h1 class="hero-title">构建可靠的<span class="hero-gradient">游戏服务端与 C++ 后端</span></h1>
             <p class="hero-lead">
-              这个网站用于记录我的 C++ 学习、工程实践和项目复盘。内容会围绕并发编程、
-              构建系统、资源管理、工具链和个人项目持续更新。
+              西北工业大学软件工程硕士，曾在网易互娱阴阳师事业部从事游戏服务端开发。
+              关注多人在线对战、异步网络、RPC 基础设施、系统稳定性与 AI 工程化落地。
             </p>
             <div class="hero-actions">
-              <a class="btn" href="./projects.html" data-transition>查看项目库</a>
-              <a class="btn alt" href="./archive.html" data-transition>查看时间轴</a>
-              <a class="btn ghost" href="./playground.html" data-transition>打开游乐场</a>
-              <a class="btn ghost" id="resume-link" href="./resume.jpg" target="_blank" rel="noopener">查看图片简历</a>
+              <a class="btn" href="./projects.html" data-transition>查看实习项目</a>
+              <a class="btn alt" href="./skills.html" data-transition>查看技术能力</a>
+              <a class="btn ghost" href="./contact.html" data-transition>联系我</a>
             </div>
             <div class="hero-metrics">
               <div class="metric-item">
-                <div class="metric-value">C++</div>
-                <div class="metric-label">主要学习方向</div>
+                <div class="metric-value">3</div>
+                <div class="metric-label">核心实习项目</div>
               </div>
               <div class="metric-item">
-                <div class="metric-value">工程化</div>
-                <div class="metric-label">构建与调试实践</div>
+                <div class="metric-value">TCP / KCP</div>
+                <div class="metric-label">双传输网络实践</div>
               </div>
               <div class="metric-item">
-                <div class="metric-value">长期</div>
-                <div class="metric-label">持续记录和复盘</div>
+                <div class="metric-value">2027</div>
+                <div class="metric-label">硕士毕业年份</div>
               </div>
             </div>
           </article>
@@ -73,31 +72,28 @@
           <aside class="hero-side glass" data-reveal>
             <article class="stack-card">
               <h3>当前关注</h3>
-              <p>线程池、任务调度、ECS 架构、资源热更新、CMake 工程组织和自动化测试。</p>
+              <p>连接生命周期、断线重连、多人状态同步、异步 RPC、可观测性与服务端稳定性。</p>
               <div class="avatar-line">
-                <div class="avatar-frame" id="avatar-frame">
-                  <img id="avatar-image" src="./avatar.jpg" alt="头像" />
-                  <span>W</span>
-                </div>
+                <div class="avatar-frame"><span>W</span></div>
                 <div>
                   <div><strong>weleave</strong></div>
-                  <div style="font-size: 0.84rem; color: #64708a">城市：西安市</div>
+                  <div style="font-size: 0.84rem; color: #64708a">2027 届软件工程硕士</div>
                 </div>
               </div>
             </article>
             <article class="stack-card">
-              <h3>站点能力</h3>
-              <p>技能和项目可本地编辑，笔记可筛选，归档页按月份聚合，游乐场提供一些轻量工具。</p>
+              <h3>经历概览</h3>
+              <p>在网易互娱阴阳师事业部参与 MultiCA、KasioRpc 与 LogScope，覆盖游戏业务、网络基础设施和智能运维。</p>
               <div class="hero-actions" style="margin-top: 10px">
-                <a class="btn small ghost" href="./notes.html" data-transition>写学习笔记</a>
+                <a class="btn small ghost" href="./archive.html" data-transition>查看经历时间轴</a>
               </div>
             </article>
           </aside>
         </section>
 
         <section class="section glass" id="home-preview-root" data-reveal>
-          <h2>学习仪表盘</h2>
-          <p>统计数据会根据技能页、项目页、笔记页的本地编辑自动更新。</p>
+          <h2>内容概览</h2>
+          <p>项目、技能和技术复盘保持同步更新，可在对应页面按标签和时间查看。</p>
           <div class="stats-strip">
             <div class="stats-box">
               <div class="stats-title">技能条目</div>
@@ -116,22 +112,22 @@
         </section>
 
         <section class="section glass" data-reveal>
-          <h2>技术内容</h2>
+          <h2>技术方向</h2>
           <div class="grid-3">
             <article class="feature-card">
-              <h3>并发编程</h3>
-              <p>记录线程池、任务队列、互斥锁、条件变量、future 和优雅关闭机制。</p>
+              <h3>游戏服务端</h3>
+              <p>多人在线对战、PVE/PVP、断线重连、状态恢复、怪物寻路与事件广播。</p>
               <a class="go-link" href="./projects.html" data-transition>查看相关项目</a>
             </article>
             <article class="feature-card">
-              <h3>现代 C++</h3>
-              <p>整理 RAII、模板、移动语义、智能指针、chrono、filesystem 等实践。</p>
-              <a class="go-link" href="./skills.html" data-transition>查看技能站</a>
+              <h3>RPC 与异步网络</h3>
+              <p>C++20、ASIO、Protobuf、TCP/KCP、协程、线程池、strand 与 Python asyncio 绑定。</p>
+              <a class="go-link" href="./projects.html" data-transition>查看 KasioRpc</a>
             </article>
             <article class="feature-card">
-              <h3>工程工具链</h3>
-              <p>沉淀 CMake、Git、日志、测试、脚本化构建和 GitHub Pages 发布流程。</p>
-              <a class="go-link" href="./notes.html" data-transition>查看笔记页</a>
+              <h3>智能日志与可观测性</h3>
+              <p>GB 级日志流水线、多源检索、规则与 LLM 级联分类、ReAct 诊断及容量治理。</p>
+              <a class="go-link" href="./projects.html" data-transition>查看 LogScope</a>
             </article>
           </div>
         </section>
@@ -140,26 +136,26 @@
           <h2>页面入口</h2>
           <div class="grid-3">
             <article class="feature-card">
-              <h3>时间轴归档</h3>
-              <p>按月份聚合项目和笔记，适合回顾阶段学习节奏。</p>
-              <a class="go-link" href="./archive.html" data-transition>进入时间轴</a>
+              <h3>经历时间轴</h3>
+              <p>按月份聚合实习项目与技术复盘，回顾能力形成过程。</p>
+              <a class="go-link" href="./archive.html" data-transition>查看时间轴</a>
             </article>
             <article class="feature-card">
-              <h3>项目库</h3>
-              <p>支持关键词、状态和技术标签多选过滤。</p>
-              <a class="go-link" href="./projects.html" data-transition>进入项目库</a>
+              <h3>实习项目</h3>
+              <p>集中展示 MultiCA、KasioRpc 和 LogScope 的设计与实现重点。</p>
+              <a class="go-link" href="./projects.html" data-transition>查看项目</a>
             </article>
             <article class="feature-card">
-              <h3>游乐场</h3>
-              <p>包含专注计时、随机练习题、代码片段和配色小工具。</p>
-              <a class="go-link" href="./playground.html" data-transition>进入游乐场</a>
+              <h3>开发工具箱</h3>
+              <p>保留专注计时、代码片段和配色等轻量开发辅助工具。</p>
+              <a class="go-link" href="./playground.html" data-transition>打开工具箱</a>
             </article>
           </div>
         </section>
       </main>
 
       <footer class="footer">
-        <p>&copy; <span id="year"></span> weleave · 学习内容记录站</p>
+        <p>&copy; <span id="year"></span> weleave · 游戏服务端与 C++ 后端</p>
       </footer>
     </div>
 
