@@ -4,4 +4,4 @@
 
 主要项目：MultiCA 多人在线对战服务端、KasioRpc 高性能异步 RPC 框架、LogScope 智能日志分析与异常诊断平台。
 
-主页：https://weleavel.github.io/Personal-website/
+主页：https://weleave.github.io/Personal-website/
